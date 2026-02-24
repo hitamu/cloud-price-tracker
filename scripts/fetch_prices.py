@@ -2,6 +2,7 @@
 """
 Fetch VM prices from Scaleway, AWS EC2, and OVHcloud for Paris region.
 Outputs: data/prices.json
+Creates: data/prices_baseline.json (only on first run; delete to reset)
 """
 
 import gzip
@@ -25,7 +26,6 @@ def fetch_json(url):
     })
     with urllib.request.urlopen(req, timeout=30) as resp:
         raw = resp.read()
-        # AWS returns gzip-compressed content
         if raw[:2] == b'\x1f\x8b':
             raw = gzip.decompress(raw)
         return json.loads(raw)
@@ -54,7 +54,6 @@ def fetch_scaleway():
 
 def fetch_aws():
     data = fetch_json(AWS_URL)
-    # Structure: { "regions": { "EU (Paris)": { "<name> <size> EU Paris Linux": { ... } } } }
     regions = data.get("regions", {})
     paris = regions.get("EU (Paris)", {})
     results = []
@@ -68,10 +67,11 @@ def fetch_aws():
             vcpu = int(info.get("vCPU", 0))
             ram_str = info.get("Memory", "0 GiB").replace(" GiB", "").replace(",", "")
             ram_gb = float(ram_str)
-            price_str = info.get("price", "0")
-            hourly = float(price_str)
-            # Detect ARM (Graviton) by name prefix
-            arch = "arm64" if any(name.startswith(p) for p in ["a1", "m6g", "m7g", "m8g", "c6g", "c7g", "c8g", "r6g", "r7g", "r8g", "t4g", "im4g", "is4g", "hpc7g"]) else "x86_64"
+            hourly = float(info.get("price", "0"))
+            arch = "arm64" if any(name.startswith(p) for p in [
+                "a1", "m6g", "m7g", "m8g", "c6g", "c7g", "c8g",
+                "r6g", "r7g", "r8g", "t4g", "im4g", "is4g", "hpc7g"
+            ]) else "x86_64"
             results.append({
                 "name": name,
                 "vcpu": vcpu,
@@ -94,14 +94,12 @@ def fetch_aws():
 def fetch_ovh():
     data = fetch_json(OVH_URL)
 
-    # Collect all instance addon codes from all plans' instance families
     instance_addon_codes = set()
     for plan in data.get("plans", []):
         for fam in plan.get("addonFamilies", []):
             if fam.get("name") == "instance":
                 instance_addon_codes.update(fam.get("addons", []))
 
-    # Build a lookup of addons by planCode
     addon_by_code = {a["planCode"]: a for a in data.get("addons", [])}
 
     results = []
@@ -111,8 +109,6 @@ def fetch_ovh():
         addon = addon_by_code.get(code)
         if not addon:
             continue
-
-        # Only consumption billing (hourly) addons; skip monthly/postpaid duplicates
         if not code.endswith(".consumption"):
             continue
 
@@ -127,30 +123,21 @@ def fetch_ovh():
         ram_gb = round(ram_mb / 1024, 1) if ram_mb else 0
         gpu_count = gpu_info.get("number", 0) if isinstance(gpu_info, dict) else 0
 
-        # Determine arch from commercial brick or name
-        commercial = blobs.get("commercial") or {}
-        brick = commercial.get("brick", "")
-        # ARM instances are typically named with 'a1' prefix
         name = addon.get("invoiceName", code)
         arch = "arm64" if name.lower().startswith("a1-") else "x86_64"
 
-        # Find hourly consumption price (price is in 10^-8 EUR)
         hourly_eur = None
         for pricing in addon.get("pricings", []):
             if "consumption" in pricing.get("capacities", []):
-                raw_price = pricing.get("price", 0)
-                hourly_eur = round(raw_price / 1e8, 6)
+                hourly_eur = round(pricing.get("price", 0) / 1e8, 6)
                 break
 
         if hourly_eur is None:
             continue
-
-        # Deduplicate by instance name
         if name in seen_names:
             continue
         seen_names.add(name)
 
-        monthly_eur = round(hourly_eur * 730, 4)
         results.append({
             "name": name,
             "plan_code": code,
@@ -160,7 +147,7 @@ def fetch_ovh():
             "arch": arch,
             "hourly_usd": None,
             "hourly_eur": hourly_eur,
-            "monthly_eur": monthly_eur,
+            "monthly_eur": round(hourly_eur * 730, 4),
             "monthly_usd": None,
             "currency": "EUR",
             "end_of_service": False,
@@ -174,43 +161,41 @@ def main():
 
     print("Fetching Scaleway...")
     scaleway = fetch_scaleway()
-    print(f"  → {len(scaleway)} instance types")
+    print(f"  -> {len(scaleway)} instance types")
 
     print("Fetching AWS EC2 (EU Paris)...")
     aws = fetch_aws()
-    print(f"  → {len(aws)} instance types")
+    print(f"  -> {len(aws)} instance types")
 
     print("Fetching OVHcloud...")
     ovh = fetch_ovh()
-    print(f"  → {len(ovh)} instance types")
+    print(f"  -> {len(ovh)} instance types")
 
     output = {
         "updated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "region": "Paris (fr-par)",
         "providers": {
-            "scaleway": {
-                "name": "Scaleway",
-                "currency": "EUR",
-                "instances": scaleway,
-            },
-            "aws": {
-                "name": "AWS EC2",
-                "currency": "USD",
-                "instances": aws,
-            },
-            "ovh": {
-                "name": "OVHcloud",
-                "currency": "EUR",
-                "instances": ovh,
-            },
+            "scaleway": {"name": "Scaleway", "currency": "EUR", "instances": scaleway},
+            "aws":      {"name": "AWS EC2",  "currency": "USD", "instances": aws},
+            "ovh":      {"name": "OVHcloud", "currency": "EUR", "instances": ovh},
         },
     }
 
     with open("data/prices.json", "w") as f:
         json.dump(output, f, indent=2)
+    print(f"\nSaved data/prices.json  (SCW:{len(scaleway)} AWS:{len(aws)} OVH:{len(ovh)})")
 
-    print(f"\n✓ Saved data/prices.json")
-    print(f"  Scaleway: {len(scaleway)}, AWS: {len(aws)}, OVH: {len(ovh)}")
+    # Create baseline only if it does not already exist.
+    # To reset: delete data/prices_baseline.json and re-run.
+    baseline_path = "data/prices_baseline.json"
+    if not os.path.exists(baseline_path):
+        baseline = {**output, "baseline_set_at": output["updated_at"]}
+        with open(baseline_path, "w") as f:
+            json.dump(baseline, f, indent=2)
+        print(f"Created baseline snapshot: {baseline_path}")
+        print("  (Delete this file to reset the baseline on next run)")
+    else:
+        print(f"Baseline exists: {baseline_path} (not overwritten)")
 
 
 if __name__ == "__main__":
