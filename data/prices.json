@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-02-24T15:05:38Z",
+  "updated_at": "2026-02-24T15:11:16Z",
   "region": "Paris (fr-par)",
   "providers": {
     "scaleway": {
@@ -7676,6 +7676,20 @@
       "currency": "EUR",
       "instances": [
         {
+          "name": "Mi-XXL-256",
+          "plan_code": "Mi-XXL-256.consumption",
+          "vcpu": 0,
+          "ram_gb": 0,
+          "gpu": 0,
+          "arch": "x86_64",
+          "hourly_usd": null,
+          "hourly_eur": 0.0,
+          "monthly_eur": 0.0,
+          "monthly_usd": null,
+          "currency": "EUR",
+          "end_of_service": false
+        },
+        {
           "name": "metal.eg-32",
           "plan_code": "metal.eg-32.consumption",
           "vcpu": 0,
@@ -7692,20 +7706,6 @@
         {
           "name": "metal.eg-256",
           "plan_code": "metal.eg-256.consumption",
-          "vcpu": 0,
-          "ram_gb": 0,
-          "gpu": 0,
-          "arch": "x86_64",
-          "hourly_usd": null,
-          "hourly_eur": 0.0,
-          "monthly_eur": 0.0,
-          "monthly_usd": null,
-          "currency": "EUR",
-          "end_of_service": false
-        },
-        {
-          "name": "Mi-XXL-256",
-          "plan_code": "Mi-XXL-256.consumption",
           "vcpu": 0,
           "ram_gb": 0,
           "gpu": 0,
@@ -7914,8 +7914,8 @@
           "end_of_service": false
         },
         {
-          "name": "eg-7",
-          "plan_code": "eg-7.consumption",
+          "name": "b2-7",
+          "plan_code": "b2-7.consumption",
           "vcpu": 2,
           "ram_gb": 0.0,
           "gpu": 0,
@@ -7928,8 +7928,8 @@
           "end_of_service": false
         },
         {
-          "name": "b2-7",
-          "plan_code": "b2-7.consumption",
+          "name": "eg-7",
+          "plan_code": "eg-7.consumption",
           "vcpu": 2,
           "ram_gb": 0.0,
           "gpu": 0,
@@ -7970,6 +7970,20 @@
           "end_of_service": false
         },
         {
+          "name": "hg-7",
+          "plan_code": "hg-7.consumption",
+          "vcpu": 2,
+          "ram_gb": 0.0,
+          "gpu": 0,
+          "arch": "x86_64",
+          "hourly_usd": null,
+          "hourly_eur": 0.0978,
+          "monthly_eur": 71.394,
+          "monthly_usd": null,
+          "currency": "EUR",
+          "end_of_service": false
+        },
+        {
           "name": "c2-7",
           "plan_code": "c2-7.consumption",
           "vcpu": 2,
@@ -7998,22 +8012,8 @@
           "end_of_service": false
         },
         {
-          "name": "hg-7",
-          "plan_code": "hg-7.consumption",
-          "vcpu": 2,
-          "ram_gb": 0.0,
-          "gpu": 0,
-          "arch": "x86_64",
-          "hourly_usd": null,
-          "hourly_eur": 0.0978,
-          "monthly_eur": 71.394,
-          "monthly_usd": null,
-          "currency": "EUR",
-          "end_of_service": false
-        },
-        {
-          "name": "sp-30",
-          "plan_code": "sp-30.consumption",
+          "name": "r2-30",
+          "plan_code": "r2-30.consumption",
           "vcpu": 2,
           "ram_gb": 0.0,
           "gpu": 0,
@@ -8026,8 +8026,8 @@
           "end_of_service": false
         },
         {
-          "name": "r2-30",
-          "plan_code": "r2-30.consumption",
+          "name": "sp-30",
+          "plan_code": "sp-30.consumption",
           "vcpu": 2,
           "ram_gb": 0.0,
           "gpu": 0,
@@ -8054,8 +8054,8 @@
           "end_of_service": false
         },
         {
-          "name": "b2-15",
-          "plan_code": "b2-15.consumption",
+          "name": "eg-15",
+          "plan_code": "eg-15.consumption",
           "vcpu": 4,
           "ram_gb": 0.0,
           "gpu": 0,
@@ -8068,8 +8068,8 @@
           "end_of_service": false
         },
         {
-          "name": "eg-15",
-          "plan_code": "eg-15.consumption",
+          "name": "b2-15",
+          "plan_code": "b2-15.consumption",
           "vcpu": 4,
           "ram_gb": 0.0,
           "gpu": 0,
@@ -8194,8 +8194,8 @@
           "end_of_service": false
         },
         {
-          "name": "r2-60",
-          "plan_code": "r2-60.consumption",
+          "name": "sp-60",
+          "plan_code": "sp-60.consumption",
           "vcpu": 4,
           "ram_gb": 0.1,
           "gpu": 0,
@@ -8208,8 +8208,8 @@
           "end_of_service": false
         },
         {
-          "name": "sp-60",
-          "plan_code": "sp-60.consumption",
+          "name": "r2-60",
+          "plan_code": "r2-60.consumption",
           "vcpu": 4,
           "ram_gb": 0.1,
           "gpu": 0,
@@ -8460,8 +8460,8 @@
           "end_of_service": false
         },
         {
-          "name": "r2-120",
-          "plan_code": "r2-120.consumption",
+          "name": "sp-120",
+          "plan_code": "sp-120.consumption",
           "vcpu": 8,
           "ram_gb": 0.1,
           "gpu": 0,
@@ -8474,8 +8474,8 @@
           "end_of_service": false
         },
         {
-          "name": "sp-120",
-          "plan_code": "sp-120.consumption",
+          "name": "r2-120",
+          "plan_code": "r2-120.consumption",
           "vcpu": 8,
           "ram_gb": 0.1,
           "gpu": 0,
@@ -8992,8 +8992,8 @@
           "end_of_service": false
         },
         {
-          "name": "b2-120",
-          "plan_code": "b2-120.consumption",
+          "name": "eg-120",
+          "plan_code": "eg-120.consumption",
           "vcpu": 32,
           "ram_gb": 0.1,
           "gpu": 0,
@@ -9006,8 +9006,8 @@
           "end_of_service": false
         },
         {
-          "name": "eg-120",
-          "plan_code": "eg-120.consumption",
+          "name": "b2-120",
+          "plan_code": "b2-120.consumption",
           "vcpu": 32,
           "ram_gb": 0.1,
           "gpu": 0,
@@ -9216,8 +9216,8 @@
           "end_of_service": false
         },
         {
-          "name": "c2-120",
-          "plan_code": "c2-120.consumption",
+          "name": "hg-120",
+          "plan_code": "hg-120.consumption",
           "vcpu": 32,
           "ram_gb": 0.1,
           "gpu": 0,
@@ -9230,8 +9230,8 @@
           "end_of_service": false
         },
         {
-          "name": "hg-120",
-          "plan_code": "hg-120.consumption",
+          "name": "c2-120",
+          "plan_code": "c2-120.consumption",
           "vcpu": 32,
           "ram_gb": 0.1,
           "gpu": 0,
