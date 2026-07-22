@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-21T18:14:56Z",
+  "updated_at": "2026-07-22T18:06:34Z",
   "region": "Paris (fr-par)",
   "providers": {
     "scaleway": {
@@ -962,11 +962,11 @@
           "end_of_service": false
         },
         {
-          "name": "t2.medium",
-          "vcpu": 2,
+          "name": "m6gd.medium",
+          "vcpu": 1,
           "ram_gb": 4.0,
           "gpu": 0,
-          "arch": "x86_64",
+          "arch": "arm64",
           "hourly_usd": 0.0528,
           "hourly_eur": null,
           "monthly_usd": 38.544,
@@ -975,11 +975,11 @@
           "end_of_service": false
         },
         {
-          "name": "m6gd.medium",
-          "vcpu": 1,
+          "name": "t2.medium",
+          "vcpu": 2,
           "ram_gb": 4.0,
           "gpu": 0,
-          "arch": "arm64",
+          "arch": "x86_64",
           "hourly_usd": 0.0528,
           "hourly_eur": null,
           "monthly_usd": 38.544,
@@ -2951,11 +2951,11 @@
           "end_of_service": false
         },
         {
-          "name": "m6gd.2xlarge",
+          "name": "t2.2xlarge",
           "vcpu": 8,
           "ram_gb": 32.0,
           "gpu": 0,
-          "arch": "arm64",
+          "arch": "x86_64",
           "hourly_usd": 0.4224,
           "hourly_eur": null,
           "monthly_usd": 308.352,
@@ -2964,11 +2964,11 @@
           "end_of_service": false
         },
         {
-          "name": "t2.2xlarge",
+          "name": "m6gd.2xlarge",
           "vcpu": 8,
           "ram_gb": 32.0,
           "gpu": 0,
-          "arch": "x86_64",
+          "arch": "arm64",
           "hourly_usd": 0.4224,
           "hourly_eur": null,
           "monthly_usd": 308.352,
@@ -3354,7 +3354,7 @@
           "end_of_service": false
         },
         {
-          "name": "r6i.2xlarge",
+          "name": "r5.2xlarge",
           "vcpu": 8,
           "ram_gb": 64.0,
           "gpu": 0,
@@ -3367,7 +3367,7 @@
           "end_of_service": false
         },
         {
-          "name": "r5.2xlarge",
+          "name": "r6i.2xlarge",
           "vcpu": 8,
           "ram_gb": 64.0,
           "gpu": 0,
@@ -3705,9 +3705,9 @@
           "end_of_service": false
         },
         {
-          "name": "m5a.4xlarge",
+          "name": "c6i.4xlarge",
           "vcpu": 16,
-          "ram_gb": 64.0,
+          "ram_gb": 32.0,
           "gpu": 0,
           "arch": "x86_64",
           "hourly_usd": 0.808,
@@ -3718,9 +3718,9 @@
           "end_of_service": false
         },
         {
-          "name": "c6i.4xlarge",
+          "name": "m5a.4xlarge",
           "vcpu": 16,
-          "ram_gb": 32.0,
+          "ram_gb": 64.0,
           "gpu": 0,
           "arch": "x86_64",
           "hourly_usd": 0.808,
@@ -5980,19 +5980,6 @@
           "end_of_service": false
         },
         {
-          "name": "m6a.16xlarge",
-          "vcpu": 64,
-          "ram_gb": 256.0,
-          "gpu": 0,
-          "arch": "x86_64",
-          "hourly_usd": 3.2256,
-          "hourly_eur": null,
-          "monthly_usd": 2354.688,
-          "monthly_eur": null,
-          "currency": "USD",
-          "end_of_service": false
-        },
-        {
           "name": "c6in.12xlarge",
           "vcpu": 48,
           "ram_gb": 96.0,
@@ -6006,9 +5993,22 @@
           "end_of_service": false
         },
         {
-          "name": "c6i.16xlarge",
+          "name": "m6a.16xlarge",
           "vcpu": 64,
-          "ram_gb": 128.0,
+          "ram_gb": 256.0,
+          "gpu": 0,
+          "arch": "x86_64",
+          "hourly_usd": 3.2256,
+          "hourly_eur": null,
+          "monthly_usd": 2354.688,
+          "monthly_eur": null,
+          "currency": "USD",
+          "end_of_service": false
+        },
+        {
+          "name": "m5a.16xlarge",
+          "vcpu": 64,
+          "ram_gb": 256.0,
           "gpu": 0,
           "arch": "x86_64",
           "hourly_usd": 3.232,
@@ -6019,9 +6019,9 @@
           "end_of_service": false
         },
         {
-          "name": "m5a.16xlarge",
+          "name": "c6i.16xlarge",
           "vcpu": 64,
-          "ram_gb": 256.0,
+          "ram_gb": 128.0,
           "gpu": 0,
           "arch": "x86_64",
           "hourly_usd": 3.232,
@@ -6513,7 +6513,7 @@
           "end_of_service": false
         },
         {
-          "name": "m7gd.metal",
+          "name": "m7gd.16xlarge",
           "vcpu": 64,
           "ram_gb": 256.0,
           "gpu": 0,
@@ -6526,7 +6526,7 @@
           "end_of_service": false
         },
         {
-          "name": "m7gd.16xlarge",
+          "name": "m7gd.metal",
           "vcpu": 64,
           "ram_gb": 256.0,
           "gpu": 0,
@@ -6890,9 +6890,9 @@
           "end_of_service": false
         },
         {
-          "name": "c6i.24xlarge",
+          "name": "m5a.24xlarge",
           "vcpu": 96,
-          "ram_gb": 192.0,
+          "ram_gb": 384.0,
           "gpu": 0,
           "arch": "x86_64",
           "hourly_usd": 4.848,
@@ -6916,9 +6916,9 @@
           "end_of_service": false
         },
         {
-          "name": "m5a.24xlarge",
+          "name": "c6i.24xlarge",
           "vcpu": 96,
-          "ram_gb": 384.0,
+          "ram_gb": 192.0,
           "gpu": 0,
           "arch": "x86_64",
           "hourly_usd": 4.848,
@@ -7046,19 +7046,6 @@
           "end_of_service": false
         },
         {
-          "name": "c7i.24xlarge",
-          "vcpu": 96,
-          "ram_gb": 192.0,
-          "gpu": 0,
-          "arch": "x86_64",
-          "hourly_usd": 5.0904,
-          "hourly_eur": null,
-          "monthly_usd": 3715.992,
-          "monthly_eur": null,
-          "currency": "USD",
-          "end_of_service": false
-        },
-        {
           "name": "c7i.metal-24xl",
           "vcpu": 96,
           "ram_gb": 192.0,
@@ -7072,7 +7059,20 @@
           "end_of_service": false
         },
         {
-          "name": "r7gd.16xlarge",
+          "name": "c7i.24xlarge",
+          "vcpu": 96,
+          "ram_gb": 192.0,
+          "gpu": 0,
+          "arch": "x86_64",
+          "hourly_usd": 5.0904,
+          "hourly_eur": null,
+          "monthly_usd": 3715.992,
+          "monthly_eur": null,
+          "currency": "USD",
+          "end_of_service": false
+        },
+        {
+          "name": "r7gd.metal",
           "vcpu": 64,
           "ram_gb": 512.0,
           "gpu": 0,
@@ -7085,7 +7085,7 @@
           "end_of_service": false
         },
         {
-          "name": "r7gd.metal",
+          "name": "r7gd.16xlarge",
           "vcpu": 64,
           "ram_gb": 512.0,
           "gpu": 0,
@@ -7449,9 +7449,9 @@
           "end_of_service": false
         },
         {
-          "name": "c6in.24xlarge",
-          "vcpu": 96,
-          "ram_gb": 192.0,
+          "name": "m6a.32xlarge",
+          "vcpu": 128,
+          "ram_gb": 512.0,
           "gpu": 0,
           "arch": "x86_64",
           "hourly_usd": 6.4512,
@@ -7462,9 +7462,9 @@
           "end_of_service": false
         },
         {
-          "name": "m6a.32xlarge",
-          "vcpu": 128,
-          "ram_gb": 512.0,
+          "name": "c6in.24xlarge",
+          "vcpu": 96,
+          "ram_gb": 192.0,
           "gpu": 0,
           "arch": "x86_64",
           "hourly_usd": 6.4512,
@@ -7774,7 +7774,7 @@
           "end_of_service": false
         },
         {
-          "name": "c6id.32xlarge",
+          "name": "c6id.metal",
           "vcpu": 128,
           "ram_gb": 256.0,
           "gpu": 0,
@@ -7787,7 +7787,7 @@
           "end_of_service": false
         },
         {
-          "name": "c6id.metal",
+          "name": "c6id.32xlarge",
           "vcpu": 128,
           "ram_gb": 256.0,
           "gpu": 0,
@@ -7904,9 +7904,9 @@
           "end_of_service": false
         },
         {
-          "name": "x2iedn.8xlarge",
-          "vcpu": 32,
-          "ram_gb": 1024.0,
+          "name": "x1.16xlarge",
+          "vcpu": 64,
+          "ram_gb": 976.0,
           "gpu": 0,
           "arch": "x86_64",
           "hourly_usd": 8.403,
@@ -7917,9 +7917,9 @@
           "end_of_service": false
         },
         {
-          "name": "x1.16xlarge",
-          "vcpu": 64,
-          "ram_gb": 976.0,
+          "name": "x2iedn.8xlarge",
+          "vcpu": 32,
+          "ram_gb": 1024.0,
           "gpu": 0,
           "arch": "x86_64",
           "hourly_usd": 8.403,
@@ -7969,19 +7969,6 @@
           "end_of_service": false
         },
         {
-          "name": "hpc7a.96xlarge",
-          "vcpu": 192,
-          "ram_gb": 768.0,
-          "gpu": 0,
-          "arch": "x86_64",
-          "hourly_usd": 8.5553,
-          "hourly_eur": null,
-          "monthly_usd": 6245.369,
-          "monthly_eur": null,
-          "currency": "USD",
-          "end_of_service": false
-        },
-        {
           "name": "hpc7a.48xlarge",
           "vcpu": 96,
           "ram_gb": 768.0,
@@ -8008,7 +7995,20 @@
           "end_of_service": false
         },
         {
-          "name": "c6in.metal",
+          "name": "hpc7a.96xlarge",
+          "vcpu": 192,
+          "ram_gb": 768.0,
+          "gpu": 0,
+          "arch": "x86_64",
+          "hourly_usd": 8.5553,
+          "hourly_eur": null,
+          "monthly_usd": 6245.369,
+          "monthly_eur": null,
+          "currency": "USD",
+          "end_of_service": false
+        },
+        {
+          "name": "c6in.32xlarge",
           "vcpu": 128,
           "ram_gb": 256.0,
           "gpu": 0,
@@ -8021,7 +8021,7 @@
           "end_of_service": false
         },
         {
-          "name": "c6in.32xlarge",
+          "name": "c6in.metal",
           "vcpu": 128,
           "ram_gb": 256.0,
           "gpu": 0,
@@ -8047,7 +8047,7 @@
           "end_of_service": false
         },
         {
-          "name": "c8g.48xlarge",
+          "name": "c8g.metal-48xl",
           "vcpu": 192,
           "ram_gb": 384.0,
           "gpu": 0,
@@ -8060,7 +8060,7 @@
           "end_of_service": false
         },
         {
-          "name": "c8g.metal-48xl",
+          "name": "c8g.48xlarge",
           "vcpu": 192,
           "ram_gb": 384.0,
           "gpu": 0,
@@ -8281,19 +8281,6 @@
           "end_of_service": false
         },
         {
-          "name": "i7i.24xlarge",
-          "vcpu": 96,
-          "ram_gb": 768.0,
-          "gpu": 0,
-          "arch": "x86_64",
-          "hourly_usd": 10.5125,
-          "hourly_eur": null,
-          "monthly_usd": 7674.125,
-          "monthly_eur": null,
-          "currency": "USD",
-          "end_of_service": false
-        },
-        {
           "name": "i7i.metal-24xl",
           "vcpu": 96,
           "ram_gb": 768.0,
@@ -8307,7 +8294,20 @@
           "end_of_service": false
         },
         {
-          "name": "c8i.48xlarge",
+          "name": "i7i.24xlarge",
+          "vcpu": 96,
+          "ram_gb": 768.0,
+          "gpu": 0,
+          "arch": "x86_64",
+          "hourly_usd": 10.5125,
+          "hourly_eur": null,
+          "monthly_usd": 7674.125,
+          "monthly_eur": null,
+          "currency": "USD",
+          "end_of_service": false
+        },
+        {
+          "name": "c8i.metal-48xl",
           "vcpu": 192,
           "ram_gb": 384.0,
           "gpu": 0,
@@ -8320,7 +8320,7 @@
           "end_of_service": false
         },
         {
-          "name": "c8i.metal-48xl",
+          "name": "c8i.48xlarge",
           "vcpu": 192,
           "ram_gb": 384.0,
           "gpu": 0,
@@ -8502,7 +8502,7 @@
           "end_of_service": false
         },
         {
-          "name": "r6in.metal",
+          "name": "r6in.32xlarge",
           "vcpu": 128,
           "ram_gb": 1024.0,
           "gpu": 0,
@@ -8515,7 +8515,7 @@
           "end_of_service": false
         },
         {
-          "name": "r6in.32xlarge",
+          "name": "r6in.metal",
           "vcpu": 128,
           "ram_gb": 1024.0,
           "gpu": 0,
@@ -8567,7 +8567,7 @@
           "end_of_service": false
         },
         {
-          "name": "r8g.48xlarge",
+          "name": "r8g.metal-48xl",
           "vcpu": 192,
           "ram_gb": 1536.0,
           "gpu": 0,
@@ -8580,7 +8580,7 @@
           "end_of_service": false
         },
         {
-          "name": "r8g.metal-48xl",
+          "name": "r8g.48xlarge",
           "vcpu": 192,
           "ram_gb": 1536.0,
           "gpu": 0,
@@ -8736,9 +8736,9 @@
           "end_of_service": false
         },
         {
-          "name": "x2idn.32xlarge",
+          "name": "x1.32xlarge",
           "vcpu": 128,
-          "ram_gb": 2048.0,
+          "ram_gb": 1952.0,
           "gpu": 0,
           "arch": "x86_64",
           "hourly_usd": 16.806,
@@ -8749,9 +8749,9 @@
           "end_of_service": false
         },
         {
-          "name": "x1.32xlarge",
+          "name": "x2idn.32xlarge",
           "vcpu": 128,
-          "ram_gb": 1952.0,
+          "ram_gb": 2048.0,
           "gpu": 0,
           "arch": "x86_64",
           "hourly_usd": 16.806,
@@ -8840,7 +8840,7 @@
           "end_of_service": false
         },
         {
-          "name": "c8i.metal-96xl",
+          "name": "c8i.96xlarge",
           "vcpu": 384,
           "ram_gb": 768.0,
           "gpu": 0,
@@ -8853,7 +8853,7 @@
           "end_of_service": false
         },
         {
-          "name": "c8i.96xlarge",
+          "name": "c8i.metal-96xl",
           "vcpu": 384,
           "ram_gb": 768.0,
           "gpu": 0,
@@ -8905,19 +8905,6 @@
           "end_of_service": false
         },
         {
-          "name": "x8i.metal-48xl",
-          "vcpu": 192,
-          "ram_gb": 3072.0,
-          "gpu": 0,
-          "arch": "x86_64",
-          "hourly_usd": 26.46912,
-          "hourly_eur": null,
-          "monthly_usd": 19322.4576,
-          "monthly_eur": null,
-          "currency": "USD",
-          "end_of_service": false
-        },
-        {
           "name": "x8i.48xlarge",
           "vcpu": 192,
           "ram_gb": 3072.0,
@@ -8931,7 +8918,20 @@
           "end_of_service": false
         },
         {
-          "name": "i8ge.metal-48xl",
+          "name": "x8i.metal-48xl",
+          "vcpu": 192,
+          "ram_gb": 3072.0,
+          "gpu": 0,
+          "arch": "x86_64",
+          "hourly_usd": 26.46912,
+          "hourly_eur": null,
+          "monthly_usd": 19322.4576,
+          "monthly_eur": null,
+          "currency": "USD",
+          "end_of_service": false
+        },
+        {
+          "name": "i8ge.48xlarge",
           "vcpu": 192,
           "ram_gb": 1536.0,
           "gpu": 0,
@@ -8944,7 +8944,7 @@
           "end_of_service": false
         },
         {
-          "name": "i8ge.48xlarge",
+          "name": "i8ge.metal-48xl",
           "vcpu": 192,
           "ram_gb": 1536.0,
           "gpu": 0,
@@ -9184,6 +9184,20 @@
       "currency": "EUR",
       "instances": [
         {
+          "name": "Mi-XXL-256",
+          "plan_code": "Mi-XXL-256.consumption",
+          "vcpu": 0,
+          "ram_gb": 0,
+          "gpu": 0,
+          "arch": "x86_64",
+          "hourly_usd": null,
+          "hourly_eur": 0.0,
+          "monthly_eur": 0.0,
+          "monthly_usd": null,
+          "currency": "EUR",
+          "end_of_service": false
+        },
+        {
           "name": "metal.eg-256",
           "plan_code": "metal.eg-256.consumption",
           "vcpu": 0,
@@ -9212,22 +9226,8 @@
           "end_of_service": false
         },
         {
-          "name": "Mi-XXL-256",
-          "plan_code": "Mi-XXL-256.consumption",
-          "vcpu": 0,
-          "ram_gb": 0,
-          "gpu": 0,
-          "arch": "x86_64",
-          "hourly_usd": null,
-          "hourly_eur": 0.0,
-          "monthly_eur": 0.0,
-          "monthly_usd": null,
-          "currency": "EUR",
-          "end_of_service": false
-        },
-        {
-          "name": "s1-2",
-          "plan_code": "s1-2.consumption",
+          "name": "vps-ssd-1",
+          "plan_code": "vps-ssd-1.consumption",
           "vcpu": 1,
           "ram_gb": 0.0,
           "gpu": 0,
@@ -9240,8 +9240,8 @@
           "end_of_service": false
         },
         {
-          "name": "vps-ssd-1",
-          "plan_code": "vps-ssd-1.consumption",
+          "name": "s1-2",
+          "plan_code": "s1-2.consumption",
           "vcpu": 1,
           "ram_gb": 0.0,
           "gpu": 0,
@@ -9296,20 +9296,6 @@
           "end_of_service": false
         },
         {
-          "name": "s1-4",
-          "plan_code": "s1-4.consumption",
-          "vcpu": 1,
-          "ram_gb": 0.0,
-          "gpu": 0,
-          "arch": "x86_64",
-          "hourly_usd": null,
-          "hourly_eur": 0.0219,
-          "monthly_eur": 15.987,
-          "monthly_usd": null,
-          "currency": "EUR",
-          "end_of_service": false
-        },
-        {
           "name": "ks-2",
           "plan_code": "ks-2.consumption",
           "vcpu": 0,
@@ -9338,6 +9324,20 @@
           "end_of_service": false
         },
         {
+          "name": "s1-4",
+          "plan_code": "s1-4.consumption",
+          "vcpu": 1,
+          "ram_gb": 0.0,
+          "gpu": 0,
+          "arch": "x86_64",
+          "hourly_usd": null,
+          "hourly_eur": 0.0219,
+          "monthly_eur": 15.987,
+          "monthly_usd": null,
+          "currency": "EUR",
+          "end_of_service": false
+        },
+        {
           "name": "d2-8",
           "plan_code": "d2-8.consumption",
           "vcpu": 4,
@@ -9352,8 +9352,8 @@
           "end_of_service": false
         },
         {
-          "name": "s1-8",
-          "plan_code": "s1-8.consumption",
+          "name": "vps-ssd-3",
+          "plan_code": "vps-ssd-3.consumption",
           "vcpu": 2,
           "ram_gb": 0.0,
           "gpu": 0,
@@ -9366,8 +9366,8 @@
           "end_of_service": false
         },
         {
-          "name": "vps-ssd-3",
-          "plan_code": "vps-ssd-3.consumption",
+          "name": "s1-8",
+          "plan_code": "s1-8.consumption",
           "vcpu": 2,
           "ram_gb": 0.0,
           "gpu": 0,
@@ -10052,11 +10052,11 @@
           "end_of_service": false
         },
         {
-          "name": "g2-15",
-          "plan_code": "g2-15.consumption",
-          "vcpu": 4,
-          "ram_gb": 0.0,
-          "gpu": 1,
+          "name": "b2-60",
+          "plan_code": "b2-60.consumption",
+          "vcpu": 16,
+          "ram_gb": 0.1,
+          "gpu": 0,
           "arch": "x86_64",
           "hourly_usd": null,
           "hourly_eur": 0.526,
@@ -10066,11 +10066,11 @@
           "end_of_service": false
         },
         {
-          "name": "b2-60",
-          "plan_code": "b2-60.consumption",
-          "vcpu": 16,
-          "ram_gb": 0.1,
-          "gpu": 0,
+          "name": "g2-15",
+          "plan_code": "g2-15.consumption",
+          "vcpu": 4,
+          "ram_gb": 0.0,
+          "gpu": 1,
           "arch": "x86_64",
           "hourly_usd": null,
           "hourly_eur": 0.526,
@@ -10164,8 +10164,8 @@
           "end_of_service": false
         },
         {
-          "name": "t1-45",
-          "plan_code": "t1-45.consumption",
+          "name": "t1-le-45",
+          "plan_code": "t1-le-45.consumption",
           "vcpu": 8,
           "ram_gb": 0.0,
           "gpu": 1,
@@ -10178,8 +10178,8 @@
           "end_of_service": false
         },
         {
-          "name": "t1-le-45",
-          "plan_code": "t1-le-45.consumption",
+          "name": "t1-45",
+          "plan_code": "t1-45.consumption",
           "vcpu": 8,
           "ram_gb": 0.0,
           "gpu": 1,
@@ -10332,8 +10332,8 @@
           "end_of_service": false
         },
         {
-          "name": "t2-le-45",
-          "plan_code": "t2-le-45.consumption",
+          "name": "t2-45",
+          "plan_code": "t2-45.consumption",
           "vcpu": 15,
           "ram_gb": 0.0,
           "gpu": 1,
@@ -10346,8 +10346,8 @@
           "end_of_service": false
         },
         {
-          "name": "t2-45",
-          "plan_code": "t2-45.consumption",
+          "name": "t2-le-45",
+          "plan_code": "t2-le-45.consumption",
           "vcpu": 15,
           "ram_gb": 0.0,
           "gpu": 1,
@@ -11018,11 +11018,11 @@
           "end_of_service": false
         },
         {
-          "name": "h100-380",
-          "plan_code": "h100-380.consumption",
-          "vcpu": 30,
-          "ram_gb": 0.4,
-          "gpu": 1,
+          "name": "t1-180",
+          "plan_code": "t1-180.consumption",
+          "vcpu": 36,
+          "ram_gb": 0.2,
+          "gpu": 4,
           "arch": "x86_64",
           "hourly_usd": null,
           "hourly_eur": 2.8,
@@ -11032,11 +11032,11 @@
           "end_of_service": false
         },
         {
-          "name": "t1-le-180",
-          "plan_code": "t1-le-180.consumption",
-          "vcpu": 32,
-          "ram_gb": 0.2,
-          "gpu": 4,
+          "name": "h100-380",
+          "plan_code": "h100-380.consumption",
+          "vcpu": 30,
+          "ram_gb": 0.4,
+          "gpu": 1,
           "arch": "x86_64",
           "hourly_usd": null,
           "hourly_eur": 2.8,
@@ -11060,9 +11060,9 @@
           "end_of_service": false
         },
         {
-          "name": "t1-180",
-          "plan_code": "t1-180.consumption",
-          "vcpu": 36,
+          "name": "t1-le-180",
+          "plan_code": "t1-le-180.consumption",
+          "vcpu": 32,
           "ram_gb": 0.2,
           "gpu": 4,
           "arch": "x86_64",
